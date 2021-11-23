@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<title>JHS Bell Schedule</title>
+		<link href="styles.css" type="text/css" rel="stylesheet" />
+	</head>
+	
+	<body>
+		<h1>JHS Bell Schedule</h1>
+		<p id="currentDay"></p>
+		<p id="currentTime"></p>
+		
+		<p><iframe id="schedule"
+			src=""
+			frameborder="0">
+			</iframe></p>
+
+		<button type="submit" onClick="refreshPage()">Refresh</button>
+	
+		<script type="text/javascript" src="js/getDayAndTime.js"></script>
+		<script>
+		// Create refresh function for button.
+			function refreshPage(){
+    			window.location.reload();
+			}
+			
+		// Get today's schedule
+			if (holiday == true) {
+				document.getElementById("schedule").src =
+				"scheduleHoliday.html";
+				}
+			else if (weekday == "Monday" || "Tuesday" || "Friday") {
+				document.getElementById("schedule").src =
+				"scheduleMTF.html";
+				}
+			else if (weekday == "Wednesday") {
+				document.getElementById("schedule").src =
+				"scheduleW.html";
+				}
+			else if (weekday == "Thursday") {
+				document.getElementById("schedule").src =
+				"scheduleTh.html";
+				}
+			else {
+				document.getElementById("schedule").src =
+				"scheduleSatSun.html";
+				}
+		
+		// Dynamically adjust iframe size
+			let iframe = document.getElementById("schedule");
+			
+			iframe.addEventListener('load', function() {
+				iframe.style.height = iframe.contentDocument.body.scrollHeight + 'px';
+				iframe.style.width = iframe.contentDocument.body.scrollWidth + 'px';
+			});
+		</script>
+	</body>
