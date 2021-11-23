@@ -5,6 +5,7 @@ body {
 
 table {
 	background-color: rgb(255,255,255);
+	border-collapse: collapse;
 	}
 th,td {
 	padding: 3px 24px 3px 24px;}
@@ -23,3 +24,11 @@ td {
 	}
 tr.title {
 	text-align: center;}
+
+input[type="submit"] {
+	color: rgb(255,255,255);
+	font-size: 100%;
+	background-color: rgb(90,64,153);
+	border: 2px solid rgb(125,100,187);
+	border-radius: 5px;
+	}
