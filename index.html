@@ -1,69 +1,69 @@
 <!doctype html>
 
 <html lang="en">
+
 	<head>
 		<title>JHS 2021-2022 Bell Schedule</title>
 		<link href="styles.css" type="text/css" rel="stylesheet" />
 	</head>
 	
 	<body>
+	
 	<div class="content-wrapper">
-		<div class="header-wrapper">
 		<h1>JHS 2021-2022 Bell Schedule</h1>
-		</div>
 		
 		<div class="info-wrapper">
 		<p id="currentDay"></p>
 		<p id="currentTime"></p>
-		</div>
-		
-		<div class="table-wrapper">
-		<p><iframe id="schedule"
-			src=""
-			width="100%"
-			frameborder="0">
-			</iframe></p>
-		</div>
-
 		<div class="submit">
 			<input type="submit" value="Refresh" onclick="refreshPage()"/>
 		</div>
+		</div>
+		
+		<div class="schedule-wrapper">
+		<p>Today's Schedule:</p>
+				
+		<p><iframe id="schedule"
+			src=""
+			style="border:none;">
+			</iframe></p>
+		</div>
 	</div>
 	
-		<script type="text/javascript" src="js/getDayAndTime.js"></script>
-		<script>
-		// Create refresh function for button.
-			function refreshPage(){
-    			window.location.reload();
+	<script type="text/javascript" src="js/getDayAndTime.js"></script>
+	<script>
+	// Create refresh function for button.
+		function refreshPage(){
+    		window.location.reload();
 			}
 			
-		// Get today's schedule
-			if (holiday == true) {
-				document.getElementById("schedule").src =
-				"scheduleHoliday.html";
-				}
-			else if (weekday == "Monday" || "Tuesday" || "Friday") {
-				document.getElementById("schedule").src =
-				"scheduleMTF.html";
-				}
-			else if (weekday == "Wednesday") {
-				document.getElementById("schedule").src =
-				"scheduleW.html";
-				}
-			else if (weekday == "Thursday") {
-				document.getElementById("schedule").src =
-				"scheduleTh.html";
-				}
-			else {
-				document.getElementById("schedule").src =
-				"scheduleSatSun.html";
-				}
+	// Get today's schedule
+		if (holiday == true) {
+			document.getElementById("schedule").src =
+			"scheduleHoliday.html";
+			}
+		else if (weekday == "Monday" || "Tuesday" || "Friday") {
+			document.getElementById("schedule").src =
+			"scheduleMTF.html";
+			}
+		else if (weekday == "Wednesday") {
+			document.getElementById("schedule").src =
+			"scheduleW.html";
+			}
+		else if (weekday == "Thursday") {
+			document.getElementById("schedule").src =
+			"scheduleTh.html";
+			}
+		else {
+			document.getElementById("schedule").src =
+			"scheduleSatSun.html";
+			}
 		
-		// Dynamically adjust iframe size
-			let iframe = document.getElementById("schedule");
-			
+	// Dynamically adjust iframe size
+		let iframe = document.getElementById("schedule");
 			iframe.addEventListener('load', function() {
-				iframe.style.height = (iframe.contentDocument.body.scrollHeight + 12) + 'px';
+			iframe.style.height = (iframe.contentDocument.body.scrollHeight + 12) + 'px';
 			});
-		</script>
+	</script>
+	
 	</body>

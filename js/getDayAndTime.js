@@ -32,7 +32,7 @@ let minuteString = minute.toString();
 // Setting the time string
 let time = hourString + ":" + minuteString;
 			
-document.getElementById("currentTime").innerHTML = "The time is: " + time + " " + AMPM;
+document.getElementById("currentTime").innerHTML = "The current time is: " + time + " " + AMPM;
 			
 // Getting the day of the week
 const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -43,7 +43,7 @@ const months = ["January","February","March","April","May","June","July","August
 	"October","November","December"];
 var month = months[now.getMonth()];
 			
-document.getElementById("currentDay").innerHTML = "Today is: " + weekday + ", "
+document.getElementById("currentDay").innerHTML = weekday + ", "
 	+ month + " " + now.getDate() + ", " + now.getFullYear()
 
 // Get the holiday schedule
